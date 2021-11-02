@@ -1,0 +1,186 @@
+
+
+
+
+Program to find the duplicate characters in a string
+Explanation
+In this program, we need to find the duplicate characters in the string.
+
+Great responsibility  
+To find the duplicate character from the string, we count the occurrence of each character in the string. If count is greater than 1, it implies that a character has a duplicate entry in the string. In above example, the characters highlighted in green are duplicate characters.
+
+Algorithm
+Define a string.
+Two loops will be used to find the duplicate characters. Outer loop will be used to select a character and initialize variable count by 1.
+Inner loop will compare the selected character with rest of the characters present in the string.
+If a match found, it increases the count by 1 and set the duplicates of selected character by '0' to mark them as visited.
+After inner loop, if count of character is greater than 1, then it has duplicates in the string.
+Solution
+Python
+string = "Great responsibility";  
+   
+print("Duplicate characters in a given string: ");  
+#Counts each character present in the string  
+for i in range(0, len(string)):  
+    count = 1;  
+    for j in range(i+1, len(string)):  
+        if(string[i] == string[j] and string[i] != ' '):  
+            count = count + 1;  
+            #Set string[j] to 0 to avoid printing visited character  
+            string = string[:j] + '0' + string[j+1:];  
+   
+    #A character is considered as duplicate if count is greater than 1  
+    if(count > 1 and string[i] != '0'):  
+        print(string[i]);  
+Output:
+
+ Duplicate characters in a given string: 
+r
+e
+t
+s
+i
+C
+#include <stdio.h>  
+#include <string.h>  
+   
+int main()  
+{  
+    char string[] = "Great responsibility";  
+    int count;  
+      
+    printf("Duplicate characters in a given string: \n");  
+    //Counts each character present in the string  
+    for(int i = 0; i < strlen(string); i++) {  
+        count = 1;  
+        for(int j = i+1; j < strlen(string); j++) {  
+            if(string[i] == string[j] && string[i] != ' ') {  
+                count++;  
+                //Set string[j] to 0 to avoid printing visited character  
+                string[j] = '0';  
+            }  
+        }  
+        //A character is considered as duplicate if count is greater than 1  
+        if(count > 1 && string[i] != '0')  
+            printf("%c\n", string[i]);  
+    }  
+   
+    return 0;  
+}  
+Output:
+
+
+Duplicate characters in a given string: 
+r
+e
+t
+s
+i
+JAVA
+public class DuplicateCharacters {  
+     public static void main(String[] args) {  
+        String string1 = "Great responsibility";  
+        int count;  
+          
+        //Converts given string into character array  
+        char string[] = string1.toCharArray();  
+          
+        System.out.println("Duplicate characters in a given string: ");  
+        //Counts each character present in the string  
+        for(int i = 0; i <string.length; i++) {  
+            count = 1;  
+            for(int j = i+1; j <string.length; j++) {  
+                if(string[i] == string[j] && string[i] != ' ') {  
+                    count++;  
+                    //Set string[j] to 0 to avoid printing visited character  
+                    string[j] = '0';  
+                }  
+            }  
+            //A character is considered as duplicate if count is greater than 1  
+            if(count > 1 && string[i] != '0')  
+                System.out.println(string[i]);  
+        }  
+    }  
+}  
+Output:
+
+Duplicate characters in a given string: 
+r
+e
+t
+s
+i
+C#
+using System;  
+                      
+public class DuplicateCharacters  
+{  
+    public static void Main()  
+    {  
+        String str = "Great responsibility";  
+        int count;  
+          
+        //Converts given string into character array  
+        char[] string1 = str.ToCharArray();  
+          
+        Console.WriteLine("Duplicate characters in a given string: ");  
+        //Counts each character present in the string  
+        for(int i = 0; i <string1.Length; i++) {  
+            count = 1;  
+            for(int j = i+1; j <string1.Length; j++) {  
+                if(string1[i] == string1[j] && string1[i] != ' ') {  
+                    count++;  
+                    //Set string1[j] to 0 to avoid printing visited character  
+                    string1[j] = '0';  
+                }  
+            }  
+            //A character is considered as duplicate if count is greater than 1  
+            if(count > 1 && string1[i] != '0')  
+                Console.WriteLine(string1[i]);  
+        }  
+    }  
+}  
+Output:
+
+Duplicate characters in a given string: 
+r
+e
+t
+s
+i
+PHP
+<!DOCTYPE html>  
+<html>  
+<body>  
+<?php  
+$string = "Great responsibility";  
+$count;  
+   
+print("Duplicate characters in a given string: <br>");  
+//Counts each character present in the string  
+for($i = 0; $i < strlen($string); $i++) {  
+    $count = 1;  
+    for($j = $i+1; $j < strlen($string); $j++) {  
+        if($string[$i] == $string[$j] && $string[$i] != ' ') {  
+            $count++;  
+            //Set $string[$j] to 0 to avoid printing visited character  
+            $string[$j] = '0';  
+        }  
+    }  
+    //A character is considered as duplicate if count is greater than 1  
+    if($count > 1 && $string[$i] != '0'){  
+        print($string[$i]);  
+        print("<br>");  
+    }  
+}  
+?>  
+</body>  
+</html>  
+Output:
+
+Duplicate characters in a given string: 
+r
+e
+t
+s
+i

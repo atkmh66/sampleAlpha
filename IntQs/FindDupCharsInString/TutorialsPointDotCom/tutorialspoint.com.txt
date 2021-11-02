@@ -1,0 +1,77 @@
+
+
+
+
+
+https://www.tutorialspoint.com/java-program-to-find-all-duplicate-characters-in-a-string
+
+
+
+
+
+The duplicate characters in a string are those that occur more than once. These characters can be found using a nested for loop. An example of this is given as follows −
+
+String = Apple
+In the above string, p is a duplicate character as it occurs more than once.
+
+A program that demonstrates this is given as follows.
+
+Example
+Live Demo
+
+public class Example {
+   public static void main(String argu[]) {
+      String str = "beautiful beach";
+      char[] carray = str.toCharArray();
+      System.out.println("The string is:" + str);
+      System.out.print("Duplicate Characters in above string are: ");
+      for (int i = 0; i < str.length(); i++) {
+         for (int j = i + 1; j < str.length(); j++) {
+            if (carray[i] == carray[j]) {
+               System.out.print(carray[j] + " ");
+               break;
+            }
+         }
+      }
+   }
+}
+Output
+The string is:beautiful beach
+Duplicate Characters in above string are: b e a u
+Now let us understand the above program.
+
+First, the string str is defined. Then, str.toCharArray() converts the string into a sequence of characters. The original string is displayed. The code snippet that demonstrates this is given as follows −
+
+String str = "beautiful beach";
+char[] carray = str.toCharArray();
+System.out.println("The string is:" + str);
+The duplicate characters are found in the string using a nested for loop. Then these characters are displayed. The code snippet that demonstrates this is given as follows.
+
+System.out.print("Duplicate Characters in above string are: ");
+for (int i = 0; i < str.length(); i++) {
+   for (int j = i + 1; j < str.length(); j++) {
+      if (carray[i] == carray[j]) {
+         System.out.print(carray[j] + " ");
+         break;
+      }
+   }
+}
+raja
+Karthikeya Boyini
+Published on 05-Dec-2018 10:46:21
+ Related Questions & Answers
+Python program to find all duplicate characters in a string
+Java Program to find duplicate characters in a String?
+Find All Duplicate Characters from a String using Python
+Java program to delete duplicate characters from a given String
+Program to find string after removing consecutive duplicate characters in Python
+Program to find string after deleting k consecutive duplicate characters in python
+C# Program to remove duplicate characters from String
+Python Program to find mirror characters in a string
+How to print duplicate characters in a String using C#?
+C++ Program to Remove all Characters in a String Except Alphabets
+C# program to determine if a string has all unique characters
+Python program to check if a string contains all unique characters
+Remove all non-alphabetical characters of a String in Java?
+C# Program to find all substrings in a string
+Program to find cost to remove consecutive duplicate characters with costs in C++?

@@ -1,0 +1,105 @@
+Q #5) Write a Java Program to count the number of words in a string using HashMap.
+
+Answer:  This is a collection class program where we have used HashMap for storing the string.
+
+
+First of all, we have declared our string variable called str. Then we have used split() function delimited by single space so that we can split multiple words in a string.
+
+Thereafter, we have declared HashMap and iterated using for loop. Inside for loop, we have an if-else statement in which wherever at a particular position, the map contains a key, we set the counter at that position and add the object to the map.
+
+Each time, the counter is incremented by 1. Else, the counter is set to 1.
+
+Finally, we are printing the HashMap.
+
+Note: The same program can be used to count the number of characters in a string. All you need to do is to remove one space (remove space delimited in split method) in String[] split = str.split(“”);
+
+import java.util.HashMap;
+
+public class FinalCountWords {
+
+ public static void main(String[] args) {
+  // TODO Auto-generated method stub
+  String str = "This this is is done by Saket Saket";
+  String[] split = str.split(" ");
+  
+                HashMap<String,Integer> map = new HashMap<String,Integer>();
+  for (int i=0; i<split.length; i++) {
+   if (map.containsKey(split[i])) {
+    int count = map.get(split[i]);
+    map.put(split[i], count+1);
+   }
+   else {
+    map.put(split[i], 1);
+   }
+  }
+  System.out.println(map);
+ }
+
+}
+
+Output:
+
+{Saket=2, by=1, this=1, This=1, is=2, done=1}
+
+
+
+Q #6) Write a Java Program to iterate HashMap using While and advance for loop.
+
+Answer: Here we have inserted three elements in HashMap using put() function.
+
+The size of the map can get using the size() method. Thereafter, we have used a While loop for iterating through the map which contains one key-value pair for each element. Keys and Values can be retrieved through getKey() and getValue().
+
+Likewise, we have used advanced for loop where we have a “me2” object for the HashMap.
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+public class HashMapIteration {
+
+ public static void main(String[] args) {
+  // TODO Auto-generated method stub
+  HashMap&lt;Integer,String&gt; map = new HashMap&lt;Integer,String&gt;();
+  map.put(2, "Saket");
+  map.put(25, "Saurav");
+  map.put(12, "HashMap");
+  System.out.println(map.size());
+  System.out.println("While Loop:");
+  Iterator itr = map.entrySet().iterator();
+  while(itr.hasNext()) {
+   Map.Entry me = (Map.Entry) itr.next();
+   System.out.println("Key is " + me.getKey() + " Value is " + me.getValue());
+  }
+  System.out.println("For Loop:");
+  for(Map.Entry me2: map.entrySet()) {
+   System.out.println("Key is: " + me2.getKey() + " Value is: " + me2.getValue());
+  }
+ }
+
+}
+
+Output:
+
+3
+While Loop:
+Key is 2 Value is Saket
+Key is 25 Value is Saurav
+Key is 12 Value is HashMap
+For Loop:
+Key is: 2 Value is: Saket
+Key is: 25 Value is: Saurav
+Key is: 12 Value is: HashMap
+
+
+
+
+
+
+
+
+
+
+
+
+
+
