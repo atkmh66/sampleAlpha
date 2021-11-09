@@ -5,7 +5,7 @@ Multi Tender Functional tests
 Customer Value
 
 My observations reinforce a perspective: The former test automaiton vision has drifted off course
-Your comment about the test cases becoming a aggragation does describe the way the vision and direction has drifted.
+Your comment about the test cases becoming a aggragation describes the way the vision and direction has drifted.
 
 The name of the repo is Multi Tender Functional tests.  It seems clear from test scripting this is the direction initially taken.
 But, with the addition of Multi Tender Loyalty program, there as been code added that brings existing work into the Multi Tender Loyalty world.
@@ -28,19 +28,67 @@ user_stores_transaction_ON_brand_1##, *_2##,
 
 
 
-So, what do we have.
-we have a lot of tests.  We have little or no documentation ( that I've seen ) that would explain vision, direction and current status.
+Observations, what do we have.
+---------------------
+we have a considerable collection of tests.  We have little or no documentation ( that I've seen ) that would explain vision, direction and current status.
 
-   * Initially scripting is broken out by Functionality.  So, what are the functions:  Is there a list ?
+   * Initially scripting Seems to be broken out by Functionality identified in script file names.  So, what are the functions:  Is there a list ?
 
-   * Due to dedicatd effort have we have ended up not knowing how much of what we have, nor how similar or different it is.
+   * Due to dedicatd effort to add functionality over time, ( organizationally ) we have ended up not knowing how much of what we have, nor how similar or different it is.  
+     There are a few who individualy know some of what we have.  
 
-   * At some point the test cases start getting really big as if they were end to end TC
+   * Over time, some of the functional test have become a means of activiating or setting up the functions in the integrated loyalty system.
+      * A good example is the points calculations being as the last step in a scenario, giving an End-To-End flavor to the collection of testing
+      * The effect of this addtion means this script is no longer focusing on testing the functional operation.  
+        * When Point calculation becomes the failure we have lost the functional test evaluation of cancelling partial or whole orders.
 
-   * Over time, we are treating the functional operation as a means ot activiating the loyalty system points calculation.
-      * Means no longer focusing on testing the functional operation
+   * We have a very larg problem of clean non changing test data.  I don't fully understand where all the data lives in the tesing of system
+     Some of this work may be mocked.  One has to fully understand and dig to know for sure. ( documentation )
 
-   * We have a very larg problem of clean non changing test data. Epsilon 
+   * Your comment recently in conversation as I was describing was, "The testing has become aggragated".  I think that was the word you had used.  
+     "Aggragated," conveyed the concept of tests becoming homogenious.  They are no longer differentiated by the original functionality they were targeting.
+
+   * What have we lost in this change.
+     * We no longer have identifiable subsets we can run ( or isolate from running ) for the following test conditions 
+       Build acceptance, Acceptance testing , Functional testing, Regression testing[ small | large ], End to End
+
+
+
+Note: On the last major implementation of test automation, test functionality was defined by the page of a workflow so tracking scripting purpose was simpler
+
+
+
+
+What do we need
+---------------------
+
+We need to know what we have 
+   * On a repository basis we need the primary focus of each test script, and do all the test scenarios per script continue to focus on script subject
+   * On a sublevel we need to know how the individual scenarios deviate from each other.  This could be by good naming convention or with a tiny bit of documentation.
+
+we need to know what it does
+   * Some simple explanation: Order cancellation full, Order cancel partial, Order return, 
+   * Is it mocked or is it live ?
+
+We need to know how to control test data :  "Partial wearhousing" .
+   *  This is one of the biggest issues GAP Testing might ever undertake, 
+   *  Only partial wearhousing, because I know we need to integrate testing to access Epsilon services .  
+      We should not design all of our tests to return exact values ( IE:  My account should now display 2770 Points )
+   * We need to be able to ask for a return of test data from our provider and simply validate the data format, not necessarily All of its values.
+
+We need to break apart what has been clumped together in order to rescue the important Functional tests.
+   * This is mentioned above in the "Observations, what do we have." header
+
+We Do not need to delete what has become end to end testing.  But we need to seperate it from functional, acceptance,and smoke testing code.
+I think we can have a better collection of End to End tests if we don't try to make some of the more complicated functional tests end to end tests.
+We need a few like what I've seen.  Just not a conversation of every one of them to become 
+
+These should not all run together.
+
+
+
+
+
 
 
 Put the whiney crap here
@@ -55,19 +103,3 @@ Put the whiney crap here
    * We have a very larg problem of clean non changing test data. Epsilon 
       * Clean means the data doesn't change.  Even after a test run, you can reset and get back to what you had, and what the TC is written to expect 
       * If we need to have aged data, we need to isolated the data and the tests that expect that to happen.
-
-
-
-What do we need
-
-We need to know what we have 
-
-we need to know what it does
-
-We need to know how to control test data
-
-We need to break apart what has been clumped together in order to rescue the important Functional tests.
-
-We Do not need to delete what has become end to end testing.  But we need to seperate it from functional, acceptance,and smoke testing code.
-
-These should not all run together.
