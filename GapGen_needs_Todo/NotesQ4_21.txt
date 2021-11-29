@@ -1,0 +1,34 @@
+
+11/29/2021    
+	This file is what do I think I need and some todo.
+
+* I should review and update every day.
+
+
+what is BCS
+Ans:
+
+What is the breakdown of how development work 
+Ans:
+
+How does the work set up in stories match with the workstreams?
+Ans:
+
+
+Swagger:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dont forget the To-Do Document.
