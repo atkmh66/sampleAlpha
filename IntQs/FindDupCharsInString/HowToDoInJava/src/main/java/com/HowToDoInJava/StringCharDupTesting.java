@@ -8,18 +8,47 @@ public class StringCharDupTesting {
         testPalUsingReverse(testData);
         testData = "-Test Pal Using Reverse-";
         testPalUsingReverse(testData);
+        String [] testDataArray = new String [] {"This is Input","WhatIssItahW", "0123443210", "01234543210", "-Test Pal. How do I Look-"};
 
-        testData = "This Is Input";
-        isPalindrome(testData);
+       for (String strTemp : testDataArray) {
+           if (isPalindrome(strTemp)){
+               System.out.println(strTemp +" Passed the isPalindrome test");
+           }else {
+               System.out.println(strTemp +" Failed the isPalindrome test");
+           }
+       }
 
-        testData = "WhatIssItahW";
-        isPalindrome(testData);
 
-        testData ="0123443210";
-        isPalindrome(testData);
+//        testData = "This Is Input";
+//        if (isPalindrome(testData)){
+//            System.out.println(testData +" Passed the isPalindrome test");
+//        }else {
+//            System.out.println(testData +" Failed the isPalindrome test");
+//        }
+//
+//        testData = "WhatIssItahW";
+//        if (isPalindrome(testData)){
+//            System.out.println(testData +" Passed the isPalindrome test");
+//        }else {
+//            System.out.println(testData +" Failed the isPalindrome test");
+//        }
+//
+//
+//        testData ="0123443210";
+//        if (isPalindrome(testData)){
+//            System.out.println(testData +" Passed the isPalindrome test");
+//        }else {
+//            System.out.println(testData +" Failed the isPalindrome test");
+//        }
+//
+//
+//        testData ="01234543210";
+//        if (isPalindrome(testData)){
+//            System.out.println(testData +" Passed the isPalindrome test");
+//        }else {
+//            System.out.println(testData +" Failed the isPalindrome test");
+//        }
 
-        testData ="01234543210";
-        isPalindrome(testData);
     }// end of Main
 
    public static void testPalUsingReverse(String inputValue){
