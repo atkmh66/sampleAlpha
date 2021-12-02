@@ -12,7 +12,7 @@ What is the breakdown of how development work
 Ans:
 
 How does the work set up in stories match with the workstreams?
-Ans:
+Ans: See Workstreams detail below
 
 
 Swagger:
@@ -32,3 +32,36 @@ Swagger:
 
 
 Dont forget the To-Do Document.
+
+
+
+
+
+
+
+
+
+
+# WorkStreams
+This is a term from barclays
+It refers to what looks like the major project distinctions that are barclays perspective.
+On the gap side we have applications that fit within different work streams.
+
+I think there is a generl matrix where the work stream and applications are horizontal from some kind of beginning to end of the work stream.
+The curiousity is that Loyalty is vertically oriented through all work streams
+
+
+Work streams by name are 
+* Authorization and Settlment
+* Acqusition Integration
+* Digital Servicing Integration
+* Data Strategy and REporting
+* Conversion
+
+
+
+
+
+
+
+
